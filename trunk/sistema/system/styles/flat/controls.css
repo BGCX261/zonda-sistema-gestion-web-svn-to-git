@@ -1,0 +1,151 @@
+
+.campo {
+    padding: 4px;
+    margin: 0px 0px 5px 0px;
+    font-size: 12px;
+}
+
+.campo-flat {
+    border: 1px solid #AAA;
+    background: #FEFEFE;
+    border-radius: 6px;
+    margin-right: 36px;
+}
+
+.campo-entrada {
+    width: 360px;
+}
+
+.campo-min {
+    width: 100px;
+}
+
+.campo-square {
+    width: 200px;
+    font-size: 12px;
+    text-align: center;
+    padding: 4px;
+    margin: 4px;
+    float: left;
+    border: none;
+}
+
+.campo-texto {
+    width: 100%;
+    height: 200px;
+    font-size: 14px;
+}
+
+.campo-texto-grande {
+    width: 100%;
+    height: 300px;
+    font-size: 14px;
+}
+
+.campo-tabla {
+    text-align: center;
+    width: 100px;
+    font-size: 11px;
+    margin: 0px;
+}
+
+.boton-derecha {
+    float: right;
+    margin: 10px 0px;
+}
+
+.formulario_busqueda {
+    
+}
+
+.formulario_busqueda input, .formulario_busqueda select, .formulario_busqueda textarea {
+    display: inline;
+    font-size: 0.8em;
+    width: 120px;
+    margin: 2px;
+}
+
+.formulario_busqueda input {
+    width: 108px;
+}
+
+.formulario_busqueda input[type=submit] {
+    margin: 10px 0px;
+    width: auto;
+}
+
+.formulario_busqueda p {
+    height: 1em;
+}
+
+.formulario_busqueda label {
+    font-size: 0.9em;
+    min-width: 70px;
+    display: inline-block;
+}
+
+.formulario_busqueda .chosen-container {
+    height: 21px;
+}
+
+.boton-flat {
+    background: #EEE;
+    padding: 8px 14px;
+    margin-right: 3px;
+    display: inline-block;
+    box-shadow: 0px 0px 3px #AAA;
+    text-decoration: none;
+    border: 1px solid #AAA;
+    border-radius: 5px;
+}
+
+.boton-flat:hover {
+    background-color: #FAFAFA;
+}
+
+.boton-flat-gradient {
+    background: -moz-linear-gradient(center top, #FFF 20%, #F6F6F6 50%, #EEE 52%, #F4F4F4 100%) repeat scroll 0% 0% padding-box transparent;
+    box-shadow: 0px 0px 3px #FFF inset, 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.boton-flat-gradient:hover {
+    background: -moz-linear-gradient(center top, #F4F4F4 20%, #FAFAFA 50%, #FFF 52%, #EEE 100%) repeat scroll 0% 0% padding-box transparent;
+}
+
+.boton-flat:active {
+    background-color: #CCC;
+}
+
+.boton-flat-square {
+    width: 87px;
+    height: 54px;
+    padding: 8px;
+    border: none;
+    border-radius: 0px;
+    background-image: none;
+    box-shadow: none;
+}
+
+.aceptar-item {
+    padding: 8px 8px 8px 28px;
+    background: #EEE url("images/hecho.png") no-repeat 8px center;
+}
+
+.agregar-item {
+    padding: 8px 8px 8px 28px;
+    background: #EEE url("images/agregar.png") no-repeat 8px center;
+}
+
+.borrar-item {
+    padding: 8px 8px 8px 28px;
+    background: #EEE url("images/eliminar.png") no-repeat 8px center;
+}
+
+.guardar-item {
+    padding: 8px 8px 8px 28px;
+    background: #EEE url("images/guardar.png") no-repeat 8px center;
+}
+
+input[type=checkbox] {
+    vertical-align: middle;
+}

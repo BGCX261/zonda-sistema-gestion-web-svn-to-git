@@ -1,0 +1,65 @@
+<?php
+
+    if (!isset($_REQUEST['cliente']) || $_REQUEST['cliente'] < 1 || 
+        !isset($_REQUEST['codigo']) || $_REQUEST['codigo'] < 1 || 
+        !isset($_REQUEST['monto']) || $_REQUEST['monto'] <= 0 || 
+        !isset($_REQUEST['fondo']) || $_REQUEST['fondo'] < 1) {
+        $action_message = "Debe ingresar todos los datos de la operación!";
+        return;
+    }
+
+    include_once('include/sesion.php');
+    
+    $sesion = new Sesion();
+
+    $query = "UPDATE ventas SET saldo = (saldo - ".$_REQUEST['monto'].") WHERE codigo = ".$_REQUEST['codigo'];
+    
+    if (!mysql_query($query)) {
+        $action_message = mysql_error();
+        return;
+    }
+    
+    $query = "UPDATE fondos SET saldo = (saldo + ".$_REQUEST['monto'].") WHERE codigo = ".$_REQUEST['fondo'];
+    
+    if (!mysql_query($query)) {
+        $action_message = mysql_error();
+        return;
+    }
+    
+    $query = "
+        UPDATE
+            clientes
+        SET
+            saldo = (saldo - ".$_REQUEST['monto'].")
+        WHERE
+            codigo = ".$_REQUEST['cliente'];
+    
+    if (!mysql_query($query)) {
+        $action_message = mysql_error();
+        return;
+    }
+    
+    $query = "INSERT INTO cobros (
+                fecha, 
+                cliente, 
+                usuario, 
+                operacion, 
+                fondo, 
+                monto
+            ) VALUES (
+                NOW(),
+                ".$_REQUEST['cliente'].",
+                ".$sesion->get_user_id().",
+                ".$_REQUEST['codigo'].",
+                ".$_REQUEST['fondo'].",
+                ".$_REQUEST['monto']."
+            )";
+    
+    if (!mysql_query($query)) {
+        $action_message = mysql_error();
+        return;
+    }
+    
+    $action_message = "Se ha registrado el pago!";
+    
+?>
